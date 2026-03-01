@@ -1,0 +1,54 @@
+{
+  "uuid": "3098557d-79d7-4631-8feb-97233e47cb4f",
+  "title": "New dashboard",
+  "version": "2.4",
+  "settings": {
+    "pagenumber": 0,
+    "editable": true,
+    "fullscreenEnabled": false,
+    "parameters": {},
+    "theme": "light"
+  },
+  "pages": [
+    {
+      "title": "New page",
+      "reports": [
+        {
+          "id": "6d94d44b-b7b6-4b89-826c-c6d28ac194c8",
+          "title": "",
+          "query": "MATCH (d:Disease)-[r:ASSOCIATED_WITH]->(m:Microbe)\nWHERE r.RELATION = 'positive'\nRETURN d,r,m\nLIMIT 500;\n\n",
+          "width": 20,
+          "height": 5,
+          "x": 0,
+          "y": 0,
+          "type": "graph",
+          "selection": {
+            "Disease": "DISEASE",
+            "ASSOCIATED_WITH": "(label)",
+            "Microbe": "MICROBE"
+          },
+          "settings": {},
+          "schema": [
+            [
+              "Disease",
+              "DISEASE"
+            ],
+            [
+              "ASSOCIATED_WITH",
+              "RELATION"
+            ],
+            [
+              "Microbe",
+              "MICROBE"
+            ]
+          ]
+        }
+      ]
+    }
+  ],
+  "parameters": {},
+  "extensions": {
+    "active": true,
+    "activeReducers": []
+  }
+}
